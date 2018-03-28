@@ -1,0 +1,29 @@
+{
+  "name": "soma-react-componet-gislainy",
+  "version": "1.0.0",
+  "description": "Componet de soma em React",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thr0w/somaReactComponent.git"
+  },
+  "author": "Gislainy Crisostomo Velasco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thr0w/somaReactComponent/issues"
+  },
+  "homepage": "https://github.com/thr0w/somaReactComponent#readme",
+  "devDependencies": {
+    "tsc-watch": "^1.0.17",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {
+    "@hoda5/somalib": "^1.0.2",
+    "@types/node": "^9.6.0"
+  }
+}
