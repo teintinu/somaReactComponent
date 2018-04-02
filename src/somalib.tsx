@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as somalib from "@hoda5/somalib";
 
 export interface HelloProps { }
 
@@ -40,7 +41,7 @@ export class Hello extends React.Component<HelloProps> {
 
     calcular() {
         if (this.dados.valorA && this.dados.valorB) {
-            this.dados.resultadoSoma = this.dados.valorA + this.dados.valorB;
+            this.dados.resultadoSoma = somalib.soma(this.dados.valorA, this.dados.valorB);
         }
         else this.dados.resultadoSoma = 0;
         this.setState({});

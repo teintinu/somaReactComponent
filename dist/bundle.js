@@ -71,6 +71,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@hoda5/somalib/dist/soma.js":
+/*!**************************************************!*\
+  !*** ./node_modules/@hoda5/somalib/dist/soma.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function soma(a, b) {
+    if (a <= 0 || b <= 0) {
+        throw new Error("Use apenas numeros naturais");
+    }
+    return a + b;
+}
+exports.soma = soma;
+
+
+/***/ }),
+
 /***/ "./src/index.test.tsx":
 /*!****************************!*\
   !*** ./src/index.test.tsx ***!
@@ -110,6 +131,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
+var somalib = __webpack_require__(/*! @hoda5/somalib */ "./node_modules/@hoda5/somalib/dist/soma.js");
 var Hello = /** @class */ (function (_super) {
     __extends(Hello, _super);
     function Hello(props) {
@@ -142,7 +164,7 @@ var Hello = /** @class */ (function (_super) {
     };
     Hello.prototype.calcular = function () {
         if (this.dados.valorA && this.dados.valorB) {
-            this.dados.resultadoSoma = this.dados.valorA + this.dados.valorB;
+            this.dados.resultadoSoma = somalib.soma(this.dados.valorA, this.dados.valorB);
         }
         else
             this.dados.resultadoSoma = 0;
