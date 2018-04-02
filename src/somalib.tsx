@@ -1,19 +1,16 @@
 import * as React from "react";
 import * as somalib from "@hoda5/somalib";
 
-export interface HelloProps { }
+export interface SomaLibProps { }
 
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-
-export type HelloState = {
+export type SomaLibState = {
     valorA: number,
     valorB: number,
     resultadoSoma: number
 }
 
-export class Hello extends React.Component<HelloProps> {
-    dados: HelloState = { valorA: null, valorB: null, resultadoSoma: 0 }
+export class SomaLib extends React.Component<SomaLibProps> {
+    dados: SomaLibState = { valorA: null, valorB: null, resultadoSoma: 0 }
     constructor(props) {
         super(props);
         this.onKeyUpA = this.onKeyUpA.bind(this);
