@@ -19,23 +19,31 @@ export class Soma extends React.Component<SomaProps> {
   }
 
   handleChangeA(event: React.FormEvent<HTMLInputElement>) {
-    this.dados.a = parseInt(event.currentTarget.value);
+    const value = parseInt(event.currentTarget.value);
+    if(this.dados.a == value) return;
+    else
+      this.dados.a = value;
     this.calcular();
   }
 
   handleChangeB(event: React.FormEvent<HTMLInputElement>) {
-    this.dados.b = parseInt(event.currentTarget.value);
-    console.log("b: " + this.dados.b);
+    const value = parseInt(event.currentTarget.value);
+    if(this.dados.b == value) return;
+    else
+      this.dados.b = value;
     this.calcular();
   }
 
   calcular() {
     debugger;
-    if(this.dados.a && this.dados.b)
-      this.dados.resultado = somalib.soma(this.dados.a, this.dados.b);
-    else
-      this.dados.resultado = 0;
-    console.log("resultado: " + this.dados.resultado);
+    let resultadoSoma;
+    if(this.dados.a > 0 && this.dados.b > 0) {
+      resultadoSoma = somalib.soma(this.dados.a, this.dados.b);
+    }
+    else {
+      resultadoSoma = 0;
+    }
+    this.dados.resultado = resultadoSoma;
     this.setState({});
   }
 
