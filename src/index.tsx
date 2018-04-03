@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as ReactDom from 'react-dom';
-
+import { render } from 'react-dom';
 import { soma } from "@hoda5/somalib";
+
 class Calcula extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -11,22 +11,20 @@ class Calcula extends React.Component<any, any> {
             r: 0
         };
         this.calcular = this.calcular.bind(this);
-        this.valorA = this.valorA.bind(this);
-        this.valorB = this.valorB.bind(this);
+        this.value1 = this.value1.bind(this);
+        this.value2 = this.value2.bind(this);
     }
     calcular() {
         const self = this
         const res = soma(self.state.a, self.state.b)
-        this.setState({
-            r: self.state.a+self.state.b
-        })
+        this.setState({ r: res });
     }
-    valorA(event: any) {
+    value1(event: any) {
         this.setState({
             a: parseInt(event.target.value)
         })
     }
-    valorB(event: any) {
+    value2(event: any) {
         this.setState({
             b: parseInt(event.target.value)
         })
@@ -34,26 +32,17 @@ class Calcula extends React.Component<any, any> {
     render() {
         return (
             <div>
-                <input
-                    name="inputA"
-                    value = {this.state.a}
-                    type="number"
-                    onChange={this.valorA}
-                    placeholder="Digite o valor de A"
-                    />
-                <input
-                    name="inputB"
-                    value = {this.state.b}
-                    type="number"
-                    onChange={this.valorB}
-                    placeholder="Digite o valor de B"
-                />
+                <label>ReactApp SOMA</label>
+                <br />
+                <input name="input1" value={this.state.a} type="number" onChange={this.value1}/>
+                <input name="input2" value={this.state.b} type="number" onChange={this.value2}/>
                 <button onClick={this.calcular}>Calcular</button>
-                {this.state.r}
+                <br />
+                Resultado: {this.state.r}
             </div>
         );
     }
 }
-const root = document.getElementById('root') as HTMLElement;
+const App = document.getElementById('app') as HTMLElement;
 
-ReactDom.render(<Calcula />, root);
+render(<Calcula />, App);
