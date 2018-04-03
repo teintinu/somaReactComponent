@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hoda5/somalib": "^1.0.2",
     "@types/react": "^16.3.2",
     "@types/react-dom": "^16.0.4",
     "react": "^16.3.0",
@@ -11,7 +12,6 @@
   },
   "scripts": {
     "build": "tsc -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js"
   },
   "devDependencies": {
