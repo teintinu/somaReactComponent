@@ -13,24 +13,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var Input = /** @class */ (function (_super) {
     __extends(Input, _super);
-    function Input() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Input(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            test: _this.props.value,
+        };
+        return _this;
     }
-    // constructor(props: any) {
-    //     super(props);
-    //     this.state = {
-    //         value: 'props.value',
-    //         text: ''
-    //     };
-    // }
-    // hadleChange(event: any) {
-    //     this.setState({
-    //         value: event.target.value
-    //     });
-    // }
+    Input.prototype.hadleChange = function (event) {
+        this.setState({
+            value: event.target.value
+        });
+    };
     Input.prototype.render = function () {
+        var self = this;
         return (React.createElement("div", null,
-            React.createElement("p", null, " teste ")));
+            React.createElement("input", { type: self.props.type, value: self.props.value, placeholder: self.props.placeholder, onChange: self.hadleChange })));
     };
     return Input;
 }(React.Component));

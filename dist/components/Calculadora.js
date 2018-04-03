@@ -11,22 +11,19 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-var Hello = /** @class */ (function (_super) {
-    __extends(Hello, _super);
-    function Hello() {
+var Calculadora = /** @class */ (function (_super) {
+    __extends(Calculadora, _super);
+    function Calculadora() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Hello.prototype.render = function () {
-        return React.createElement("h1", null,
-            "Hello from ",
-            this.props.compiler,
-            " and ",
-            this.props.framework,
-            "!");
+    Calculadora.prototype.render = function () {
+        var self = this;
+        if ((self.props.type == "soma")) {
+            return (React.createElement("div", null,
+                React.createElement("h1", null, self.props.type)));
+        }
     };
-    return Hello;
+    return Calculadora;
 }(React.Component));
-exports.Hello = Hello;
-//# sourceMappingURL=Hello.js.map
+exports.Calculadora = Calculadora;
+//# sourceMappingURL=Calculadora.js.map

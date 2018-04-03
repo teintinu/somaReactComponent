@@ -12,23 +12,14 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var ReactDOM = require("react-dom");
-// <Input 
-//     // name="teste"
-//     // type="number"
-//     // value="0"
-//     // placeholder="Digite um numero aqui"
-// />
-// ReactDOM.render(
-//     <Teste />,
-//     document.getElementById('example') as HTMLElement
-// );
+var Soma_1 = require("./components/Soma");
 var Main = /** @class */ (function (_super) {
     __extends(Main, _super);
     function Main(props) {
         return _super.call(this, props) || this;
     }
     Main.prototype.render = function () {
-        return (React.createElement("p", null, " teste "));
+        return (React.createElement(Soma_1.Soma, null));
     };
     return Main;
 }(React.Component));

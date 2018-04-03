@@ -6,6 +6,8 @@ export interface InputProperty {
     type: string;
     placeholder?: string;
 }
-export declare class Input extends React.Component<{}> {
+export declare class Input extends React.Component<InputProperty, {}> {
+    constructor(props: any);
+    hadleChange(event: any): void;
     render(): JSX.Element;
 }
