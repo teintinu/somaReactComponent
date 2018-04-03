@@ -5,5 +5,6 @@ export interface CalculadoraProperty {
     elements: Array<string>;
 }
 export declare class Calculadora extends React.Component<CalculadoraProperty, {}> {
+    exibirResultado(): number;
     render(): JSX.Element | undefined;
 }

@@ -5,6 +5,7 @@ export interface InputProperty {
     value?: string;
     type: string;
     placeholder?: string;
+    onChangeText: any;
 }
 export declare class Input extends React.Component<InputProperty, {}> {
     constructor(props: any);
