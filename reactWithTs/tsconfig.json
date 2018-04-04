@@ -2,7 +2,7 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "sourceMap": true,
-        "removeComments": true,
+        "removeComments": false,
         "noImplicitAny": true,
         "module": "commonjs",
         "target": "es5",
