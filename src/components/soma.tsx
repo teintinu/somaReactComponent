@@ -10,6 +10,13 @@ export interface SomaState {
   resultado: number,
 };
 
+// type status_agenda = 'agendado' | 'confirmado' | 'cadastrado' | 'atendimento' 
+
+// function confirmaagendamento(id: number, novo_status: status_agenda): status_agenda {
+//   const status: string = novo_status;
+//   return status as status_agenda;
+// }
+
 export class Soma extends React.Component<SomaProps> {
   dados: SomaState = {a: null, b: null, resultado: 0};
   constructor(props: SomaProps) {
