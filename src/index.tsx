@@ -1,8 +1,12 @@
+
 import * as React from 'react';
 import { render } from 'react-dom';
 import { soma } from "@hoda5/somalib";
+import { ChangeEvent } from 'react';
 
-class Calcula extends React.Component<any, any> {
+class Calcula extends React.Component<{}, {
+    v1: number, v2: number, res: number
+}> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -17,11 +21,11 @@ class Calcula extends React.Component<any, any> {
     calc() {
         const self = this;
         if (self.state.v1 <= 0 || self.state.v2 <= 0)
-            return this.setState({ r: 0 });
+            return this.setState({ res: 0 });
         const res = soma(self.state.v1, self.state.v2);
-        this.setState({ r: res });
+        this.setState({ res });
     }
-    value1(event: any) {
+    value1(event: ChangeEvent<HTMLInputElement>) {
         this.setState({
             v1: parseInt(event.target.value)
         })
