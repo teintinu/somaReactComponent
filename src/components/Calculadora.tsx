@@ -5,15 +5,23 @@ export interface CalculadoraProperty {
     elements: Array<string>;
 }
 export class Calculadora extends React.Component<CalculadoraProperty, {}> {
+    constructor(props: any) {
+        super(props);
+        this.exibirResultado = this.exibirResultado.bind(this);
+    }
     exibirResultado() {
-
-        return 1;
+        let result = 0;
+        const elem = this.props.elements;
+        for(var i = 0; i< elem.lenght - 2; i++) {
+            result = elem[i] + elem[i + 1];
+        }
+        return result;
     }
     render() {
         const self = this;
         if ((self.props.type == "soma")) {
             return (
-                < div >
+                <div>
                     <h1>{self.props.type}</h1>
                     <h1>{self.props.elements}</h1>
                     {/* {self.props.elements.forEach(e => 
