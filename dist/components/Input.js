@@ -15,20 +15,17 @@ var Input = /** @class */ (function (_super) {
     __extends(Input, _super);
     function Input(props) {
         var _this = _super.call(this, props) || this;
-        _this.state = {
-            test: _this.props.value,
-        };
+        _this.hadleChange = _this.hadleChange.bind(_this);
         return _this;
     }
     Input.prototype.hadleChange = function (event) {
-        this.setState({
-            value: event.target.value
-        });
+        var self = this;
+        this.props.onChangeText(event.target.value);
     };
     Input.prototype.render = function () {
         var self = this;
         return (React.createElement("div", null,
-            React.createElement("input", { type: self.props.type, value: self.props.value, placeholder: self.props.placeholder, onChange: self.hadleChange })));
+            React.createElement("input", { type: self.props.type, value: self.props.value, placeholder: self.props.placeholder, onKeyUp: self.hadleChange })));
     };
     return Input;
 }(React.Component));

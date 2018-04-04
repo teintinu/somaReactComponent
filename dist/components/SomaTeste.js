@@ -13,21 +13,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var Input_1 = require("./Input");
 var Calculadora_1 = require("./Calculadora");
-var Soma = /** @class */ (function (_super) {
-    __extends(Soma, _super);
-    function Soma() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var SomaTeste = /** @class */ (function (_super) {
+    __extends(SomaTeste, _super);
+    function SomaTeste(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            a: '', b: ''
+        };
+        return _this;
     }
-    Soma.prototype.render = function () {
+    SomaTeste.prototype.render = function () {
+        var _this = this;
         return (React.createElement("div", null,
-            React.createElement(Input_1.Input, { name: "inputA", type: "number", placeholder: "Digite o valor de A" }),
-            React.createElement(Input_1.Input, { name: "inputB", type: "number", placeholder: "Digite o valor de B" }),
+            React.createElement(Input_1.Input, { name: "inputA", type: "number", onChangeText: function (text) { _this.setState({ a: text }); }, placeholder: "Digite o valor de A" }),
+            React.createElement(Input_1.Input, { name: "inputB", type: "number", onChangeText: function (text) { _this.setState({ b: text }); }, placeholder: "Digite o valor de B" }),
             React.createElement(Calculadora_1.Calculadora, { type: "soma", elements: [
-                    "inputA",
-                    "inputB"
+                    this.state.a,
+                    this.state.b,
                 ] })));
     };
-    return Soma;
+    return SomaTeste;
 }(React.Component));
-exports.Soma = Soma;
+exports.SomaTeste = SomaTeste;
 //# sourceMappingURL=SomaTeste.js.map

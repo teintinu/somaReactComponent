@@ -13,14 +13,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var Calculadora = /** @class */ (function (_super) {
     __extends(Calculadora, _super);
-    function Calculadora() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Calculadora(props) {
+        var _this = _super.call(this, props) || this;
+        _this.exibirResultado = _this.exibirResultado.bind(_this);
+        return _this;
     }
+    Calculadora.prototype.exibirResultado = function () {
+        var result = 0;
+        var elem = this.props.elements;
+        return result;
+    };
     Calculadora.prototype.render = function () {
         var self = this;
         if ((self.props.type == "soma")) {
             return (React.createElement("div", null,
-                React.createElement("h1", null, self.props.type)));
+                React.createElement("h1", null, self.props.type),
+                React.createElement("h1", null, self.props.elements),
+                self.exibirResultado()));
         }
     };
     return Calculadora;

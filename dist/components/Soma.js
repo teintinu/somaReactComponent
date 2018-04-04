@@ -22,32 +22,28 @@ var Soma = /** @class */ (function (_super) {
         };
         _this.handleChangeA = _this.handleChangeA.bind(_this);
         _this.handleChangeB = _this.handleChangeB.bind(_this);
+        _this.result = _this.result.bind(_this);
         return _this;
     }
     Soma.prototype.handleChangeA = function (event) {
-        // let target = event.target as HTMLInputElement;
-        // if (this.state.inputA != target.value)
-        if (parseInt(event.target.value) > 0)
+        var value = parseFloat(event.target.value);
+        if (this.state.inputA != value) {
             this.setState({
-                inputA: event.target.value
+                inputA: value
             });
-        this.result();
+        }
     };
     Soma.prototype.handleChangeB = function (event) {
-        // let target = event.target as HTMLInputElement;
-        // if (this.state.inputB != target.value)
-        if (parseInt(event.target.value) > 0)
+        var value = parseFloat(event.target.value);
+        if (this.state.inputB != value) {
             this.setState({
-                inputB: event.target.value
+                inputB: value
             });
-        this.result();
+        }
     };
     Soma.prototype.result = function () {
-        var a = parseFloat(this.state.inputA);
-        var b = parseFloat(this.state.inputB);
-        if (a > 0 && b > 0) {
-            var result = somalib_1.soma(a, b);
-            // alert('a==' + a + ' b==' + b + " soma==" + result);
+        if (this.state.inputA > 0 && this.state.inputB > 0) {
+            var result = somalib_1.soma(this.state.inputA, this.state.inputb);
             this.setState({
                 resultado: result
             });
@@ -56,9 +52,10 @@ var Soma = /** @class */ (function (_super) {
     Soma.prototype.render = function () {
         var self = this;
         return (React.createElement("div", null,
-            React.createElement("input", { name: "inputA", type: "number", value: self.state.inputA, placeholder: "Digite o valor de A", onKeyUp: self.handleChangeA }),
-            React.createElement("input", { name: "inputB", type: "number", value: self.state.inputB, onKeyUp: self.handleChangeB, placeholder: "Digite o valor de B" }),
+            React.createElement("input", { name: "inputA", type: "number", value: self.state.inputA, placeholder: "Digite o valor de A", onChange: self.handleChangeA }),
+            React.createElement("input", { name: "inputB", type: "number", value: self.state.inputB, onChange: self.handleChangeB, placeholder: "Digite o valor de B" }),
             React.createElement("br", null),
+            React.createElement("button", { onClick: this.result }, "Calcular"),
             self.state.resultado));
     };
     return Soma;

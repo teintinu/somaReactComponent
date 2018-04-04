@@ -12,10 +12,7 @@ export class Calculadora extends React.Component<CalculadoraProperty, {}> {
     exibirResultado() {
         let result = 0;
         const elem = this.props.elements;
-        for(var i = 0; i< elem.lenght - 2; i++) {
-            result = elem[i] + elem[i + 1];
-        }
-        return result;
+        return elem;
     }
     render() {
         const self = this;
