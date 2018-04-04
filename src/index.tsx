@@ -9,7 +9,9 @@ class Main extends React.Component<any, any> {
     }
     render() {
         return (
-            <SomaTeste/>
+            <div>
+            <Soma/>
+            </div>
         );
     }
 }
