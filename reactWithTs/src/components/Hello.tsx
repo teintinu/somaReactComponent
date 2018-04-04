@@ -20,7 +20,7 @@ export class Soma extends React.Component<{}, stateType> {
 
     public onChangeInput = () => 
         (e: React.ChangeEvent<HTMLInputElement>) => {
-            let resultado = soma(1, 3)
+            let resultado = soma(1, 3) 
             this.setState({resultado}); 
     };
 
