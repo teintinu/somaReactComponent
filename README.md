@@ -1,7 +1,6 @@
 # somaReactComponent
 
 tela
-```
 ----------------------------------
 
 a:  [input]
@@ -10,5 +9,4 @@ soma = [valor]
 
 ------------------------------------
 
-```
 usar @hoda5/somalib
