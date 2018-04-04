@@ -8,7 +8,7 @@ export interface InputProperty {
     onChangeText: any;
 }
 export declare class Input extends React.Component<InputProperty, {}> {
-    constructor(props: any);
-    hadleChange(event: any): void;
+    constructor(props: InputProperty);
+    handleChange(event: any): void;
     render(): JSX.Element;
 }

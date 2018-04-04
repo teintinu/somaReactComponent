@@ -8,13 +8,13 @@ export interface InputProperty {
     onChangeText: any;
 }
 export class Input extends React.Component<InputProperty, {}> {
-    constructor(props: any) {
+    constructor(props: InputProperty) {
         super(props);
-        this.hadleChange = this.hadleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
-    hadleChange(event: any) {
+    handleChange(event: any) {
         const self = this;
-        this.props.onChangeText(event.target.value);
+        self.props.onChangeText(event.target.value);
     }
     render() {
         const self = this;
@@ -24,7 +24,7 @@ export class Input extends React.Component<InputProperty, {}> {
                 type={self.props.type}
                 value={self.props.value}
                 placeholder={self.props.placeholder}
-                onKeyUp={self.hadleChange}
+                onKeyUp={self.handleChange}
             />
             </div>
         );

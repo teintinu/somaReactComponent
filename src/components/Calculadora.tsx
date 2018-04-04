@@ -10,6 +10,7 @@ export class Calculadora extends React.Component<CalculadoraProperty, {}> {
         this.exibirResultado = this.exibirResultado.bind(this);
     }
     exibirResultado(elem: Array<string>) {
+        const e = this.props.elements;
         return parseInt(elem[0]) + parseInt(elem[1]);
     }
     render() {
@@ -18,7 +19,7 @@ export class Calculadora extends React.Component<CalculadoraProperty, {}> {
             return (
                 <div>
                     <h1>{self.props.type}</h1>
-                    <h1>{self.props.elements}</h1>
+                    <ul>{self.props.elements.map((e) =><ItemComponente e={e}/>)}</ul>
                     {/* {self.props.elements.forEach(e => 
                         <p> e </p>
                     )} */}
@@ -28,3 +29,7 @@ export class Calculadora extends React.Component<CalculadoraProperty, {}> {
         }
     }
 }
+
+function ItemComponente(props: {e: string}) { 
+    return <li>{props.e}</li> 
+};

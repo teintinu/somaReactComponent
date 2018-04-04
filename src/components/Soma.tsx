@@ -3,7 +3,11 @@ import { soma } from '@hoda5/somalib';
 
 // import { Input } from "./Input";
 import { Calculadora } from "./Calculadora";
-export class Soma extends React.Component<any, any> {
+export class Soma extends React.Component<any, {
+    inputA: number,
+    inputB: number,
+    resultado?: number
+}> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -15,6 +19,7 @@ export class Soma extends React.Component<any, any> {
         this.result = this.result.bind(this);
     }
     handleChangeA(event: any) {
+        debugger
         const value = parseFloat(event.target.value);
         if (this.state.inputA != value) {
             this.setState({
@@ -23,6 +28,7 @@ export class Soma extends React.Component<any, any> {
         }
     }
     handleChangeB(event: any) {
+        debugger
         const value = parseFloat(event.target.value);
         if (this.state.inputB != value) {
             this.setState({
@@ -32,7 +38,7 @@ export class Soma extends React.Component<any, any> {
     }
     result() {
         if (this.state.inputA > 0 && this.state.inputB > 0) {
-            const result = soma(this.state.inputA, this.state.inputb);
+            const result = soma(this.state.inputA, this.state.inputB);
             this.setState({
                 resultado: result
             });

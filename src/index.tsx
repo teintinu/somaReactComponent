@@ -10,7 +10,7 @@ class Main extends React.Component<any, any> {
     render() {
         return (
             <div>
-            <Soma/>
+            <SomaTeste/>
             </div>
         );
     }
