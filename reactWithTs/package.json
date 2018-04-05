@@ -13,13 +13,15 @@
     "@types/react": "^16.3.2",
     "@types/react-dom": "^16.0.4",
     "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react-dom": "^16.3.0",
+    "webpack": "^4.4.1"
   },
   "devDependencies": {
     "@hoda5/somalib": "^1.0.2",
     "awesome-typescript-loader": "^4.0.1",
     "express": "^4.16.3",
     "source-map-loader": "^0.2.3",
-    "typescript": "^2.8.1"
+    "typescript": "^2.8.1",
+    "webpack-cli": "^2.0.13"
   }
 }

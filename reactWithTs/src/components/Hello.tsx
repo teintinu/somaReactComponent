@@ -8,8 +8,8 @@ type stateType = {
     resultado: Number;
 }
 export class Soma extends React.Component<{}, stateType> {
-    constructor(props: stateType) {
-      super(props);
+    constructor() {
+      super({});
         this.state = {
             a: null, 
             b: null, 
