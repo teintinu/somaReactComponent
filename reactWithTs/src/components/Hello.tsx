@@ -15,7 +15,6 @@ export class Soma extends React.Component<{}, stateType> {
             b: null, 
             resultado: null,
         };
-        this.render();
     }
 
     public onChangeInput = () => 
